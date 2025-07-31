@@ -1,9 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink, Award, BookOpen, Briefcase, User, Code, ChevronDown, Menu, X } from 'lucide-react';
+import { 
+  User, 
+  Code, 
+  Briefcase, 
+  GraduationCap, 
+  Award, 
+  Mail, 
+  Phone, 
+  Linkedin, 
+  Github,
+  ChevronDown,
+  Network,
+  Database,
+  Cloud,
+  Terminal,
+  FileText,
+  Trophy,
+  BookOpen,
+  Cpu,
+  Globe
+} from 'lucide-react';
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('about');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,121 +34,25 @@ const Portfolio = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
-      setIsMenuOpen(false);
-    }
-  };
-
-  const projects = [
-    {
-      title: "AI Tutor | Chatbot",
-      description: "Intelligent tutoring system for reading chapters, explaining content, answering questions, and generating practice questions.",
-      tech: ["Python", "NLP (spaCy, NLTK)", "React.js", "Flask/FastAPI", "OpenAI API", "MongoDB"],
-      category: "AI/ML"
-    },
-    {
-      title: "Drag and Drop Website Generator",
-      description: "Web application to build websites by dragging and dropping elements, supporting addition of functionalities.",
-      tech: ["React.js", "DnD libraries", "Node.js", "Express", "HTML/CSS", "JavaScript", "MongoDB"],
-      category: "Web Development"
-    },
-    {
-      title: "WebRTC Peer Communication App",
-      description: "Real-time communication tool using WebRTC, analyzed to be faster than FTP for peer-to-peer file transfer or chat.",
-      tech: ["JavaScript", "WebRTC", "Node.js", "Socket.io", "Express.js"],
-      category: "Networking"
-    },
-    {
-      title: "NLP Weather Predictor (Markov Model GUI)",
-      description: "GUI application that predicts weather using a Markov model based on previous input data.",
-      tech: ["Python", "Tkinter/PyQt", "scikit-learn", "NumPy", "Matplotlib"],
-      category: "AI/ML"
-    },
-    {
-      title: "No-Code CI/CD Pipeline Builder",
-      description: "Drag-and-drop builder for CI/CD pipelines in AWS, automating deployments without code.",
-      tech: ["AWS CodePipeline", "AWS Lambda", "AWS CodeBuild", "React.js", "Node.js"],
-      category: "DevOps"
-    },
-    {
-      title: "Find It - Online Multiplayer Game",
-      description: "Online multiplayer Spot It game with AI (robot) functionality.",
-      tech: ["React.js", "Node.js", "Socket.io", "WebSockets", "Python", "MongoDB"],
-      category: "Game Development"
-    }
-  ];
-
-  const experience = [
-    {
-      title: "Research Scholar",
-      company: "Indian Institute of Technology Madras",
-      location: "Chennai, India",
-      period: "Jan 2023 - Current",
-      highlights: [
-        "Specialized in programmable data planes with Tofino switch and eXpress Data Path (XDP)",
-        "Developed and patented anomaly detection algorithm for programmable switches",
-        "Achieved 99% accuracy in predicting anomalies with few hundred nanoseconds latency",
-        "Reduced false positive rate by ~20% in imbalanced network traffic",
-        "Published paper in IEEE NetSoft 2025"
-      ]
-    },
-    {
-      title: "Infrastructure Consultant",
-      company: "Thoughtworks",
-      location: "Bangalore, India", 
-      period: "Jun 2022 - Dec 2022",
-      highlights: [
-        "Designed secure, scalable cloud infrastructure on Google Cloud Platform (GCP)",
-        "Deployed Landing Zone Accelerators for enterprise cloud adoption",
-        "Implemented CI/CD pipelines using Terraform and Cloud Deployment Manager",
-        "Managed code repositories with GitHub and GitLab"
-      ]
-    },
-    {
-      title: "Big Data Engineer Intern",
-      company: "Cognizant Technology Solutions",
-      location: "Chennai, India",
-      period: "Mar 2022 - May 2022",
-      highlights: [
-        "Developed Twitter analysis using PySpark for sentiment analysis",
-        "Built movie recommendation system using Matrix factorization",
-        "Integrated ML feature pipelines for real-time personalization"
-      ]
-    }
-  ];
-
-  const skills = {
-    "Programming Languages": ["Python", "Java", "C", "C++", "JavaScript"],
-    "Cloud & DevOps": ["AWS", "GCP", "CI/CD Pipeline", "Terraform", "Docker"],
-    "Big Data & ML": ["Hadoop", "Spark", "Hive", "scikit-learn", "TensorFlow"],
-    "Web Technologies": ["React.js", "Node.js", "Express", "Flask", "FastAPI"],
-    "Databases": ["MongoDB", "PostgreSQL", "MySQL"],
-    "Networking": ["P4", "WebRTC", "Socket.io", "Network Programming"],
-    "Tools & Others": ["Git", "Linux", "Scapy", "NLP", "OpenAI API"]
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(sectionId);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
       }`}>
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Saithivyah R
-            </div>
-            
-            {/* Desktop Navigation */}
+            <div className="text-2xl font-bold text-blue-400">SR</div>
             <div className="hidden md:flex space-x-8">
-              {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
+              {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-colors duration-300 hover:text-blue-400 ${
+                  className={`capitalize hover:text-blue-400 transition-colors ${
                     activeSection === section ? 'text-blue-400' : 'text-gray-300'
                   }`}
                 >
@@ -137,188 +60,132 @@ const Portfolio = () => {
                 </button>
               ))}
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-700">
-              <div className="flex flex-col space-y-4 mt-4">
-                {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
-                  <button
-                    key={section}
-                    onClick={() => scrollToSection(section)}
-                    className="capitalize text-left py-2 transition-colors duration-300 hover:text-blue-400"
-                  >
-                    {section}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="home" className="min-h-screen flex items-center justify-center relative">
+        <div className="text-center z-10">
           <div className="mb-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center">
               <User size={64} className="text-white" />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Saithivyah R
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              <span className="text-white">SAITHIVYAH</span>
+              <span className="text-blue-400 ml-4">R</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-6">
-              Research Scholar & Full-Stack Developer
-            </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+            <h2 className="text-xl md:text-2xl text-gray-300 mb-6">
+              Research Scholar & Infrastructure Consultant
+            </h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Researcher with hands-on experience in data optimization, network programming, and machine learning. 
-              Proficient in P4 and performance tuning for real-world systems with proven ability to solve complex technical problems.
+              Specialized in programmable data planes, cutting-edge technologies in Tofino switch and XDP. 
+              Proven ability to work independently and in collaborative teams to solve complex technical problems.
             </p>
           </div>
-
-          <div className="flex justify-center space-x-6 mb-12">
-            <a href="mailto:saithivyah@gmail.com" className="p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors duration-300">
-              <Mail size={24} />
-            </a>
-            <a href="https://linkedin.com/in/saithivyah-15b30b150/" className="p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors duration-300">
-              <Linkedin size={24} />
-            </a>
-            <a href="https://github.com/saithivyah" className="p-3 bg-gray-700 hover:bg-gray-600 rounded-full transition-colors duration-300">
-              <Github size={24} />
-            </a>
-            <a href="tel:+91-9385516450" className="p-3 bg-green-600 hover:bg-green-700 rounded-full transition-colors duration-300">
-              <Phone size={24} />
-            </a>
-          </div>
-
-          {/* Achievements */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-              <Award className="text-yellow-400 mb-2" size={32} />
-              <h3 className="font-semibold mb-2">Indian Patent Holder</h3>
-              <p className="text-sm text-gray-300">Anomaly detection algorithm for programmable switches</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-              <BookOpen className="text-blue-400 mb-2" size={32} />
-              <h3 className="font-semibold mb-2">IEEE Publication</h3>
-              <p className="text-sm text-gray-300">Published paper in IEEE NetSoft 2025</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-              <Award className="text-purple-400 mb-2" size={32} />
-              <h3 className="font-semibold mb-2">Academic Excellence</h3>
-              <p className="text-sm text-gray-300">97 percentile in IIT-JEE, First Class Distinction</p>
-            </div>
-          </div>
-
-          <button
-            onClick={() => scrollToSection('experience')}
-            className="animate-bounce bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors duration-300"
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
           >
-            <ChevronDown size={24} />
+            <span className="mr-2">Learn More</span>
+            <ChevronDown className="animate-bounce" />
           </button>
         </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Professional Experience
-          </h2>
-          
-          <div className="space-y-12">
-            {experience.map((exp, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-blue-400 mb-2">{exp.title}</h3>
-                    <p className="text-xl text-gray-300 mb-1">{exp.company}</p>
-                    <p className="text-gray-400">{exp.location}</p>
-                  </div>
-                  <div className="mt-2 md:mt-0">
-                    <span className="bg-purple-600/30 text-purple-300 px-4 py-2 rounded-full text-sm font-medium">
-                      {exp.period}
-                    </span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-2">
-                  {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-gray-300">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-black/20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <span className="bg-blue-600/30 text-blue-300 px-3 py-1 rounded-full text-xs font-medium">
-                    {project.category}
-                  </span>
-                </div>
-                
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.slice(0, 3).map((tech, idx) => (
-                    <span key={idx} className="bg-gray-700/50 text-gray-300 px-2 py-1 rounded text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 3 && (
-                    <span className="text-blue-400 text-xs font-medium">
-                      +{project.tech.length - 3} more
-                    </span>
-                  )}
+      {/* About Section */}
+      <section id="about" className="py-20 bg-slate-800/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-blue-400">Background & Expertise</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Currently pursuing MS by Research in Computer Science & Engineering at IIT Madras, 
+                I specialize in programmable data planes with focus on Tofino switch and eXpress Data Path (XDP) 
+                technologies. My research has culminated in published papers and patent applications in network optimization.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                With experience as an Infrastructure Consultant at Thoughtworks, I've designed scalable cloud 
+                infrastructure on GCP and implemented DevOps methodologies. My technical expertise spans from 
+                low-level network programming to high-level system architecture.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="bg-slate-700/50 p-6 rounded-lg">
+                <GraduationCap className="text-blue-400 mb-3" size={32} />
+                <h4 className="text-xl font-semibold mb-2">Education</h4>
+                <div className="space-y-2 text-gray-300">
+                  <div>MS by Research, CSE - IIT Madras (2025) - CGPA: 8.5</div>
+                  <div>B.Tech IT - SASTRA University (2022) - CGPA: 8.6</div>
                 </div>
               </div>
-            ))}
+              <div className="bg-slate-700/50 p-6 rounded-lg">
+                <Award className="text-blue-400 mb-3" size={32} />
+                <h4 className="text-xl font-semibold mb-2">Achievements</h4>
+                <div className="space-y-1 text-gray-300 text-sm">
+                  <div>• Indian Patent & IEEE NetSoft 2025 Publication</div>
+                  <div>• 97 percentile in IIT-JEE</div>
+                  <div>• First Class Distinction in B.Tech</div>
+                  <div>• Gold Medalist in Calligraphy</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-            Technical Skills
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(skills).map(([category, skillList], index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center">
-                  <Code className="mr-2" size={20} />
-                  {category}
-                </h3>
+      <section id="skills" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">Technical Skills</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Code size={32} />,
+                title: "Programming Languages",
+                skills: ["Python", "Java", "C", "C++", "JavaScript", "P4", "Shell Script"]
+              },
+              {
+                icon: <Network size={32} />,
+                title: "Networking & Infrastructure",
+                skills: ["SDN", "XDP", "Tofino Switch", "WebRTC", "AWS", "GCP", "Terraform"]
+              },
+              {
+                icon: <Database size={32} />,
+                title: "Data & ML",
+                skills: ["Hadoop", "Spark", "Hive", "MongoDB", "MySQL", "scikit-learn", "NLP"]
+              },
+              {
+                icon: <Cloud size={32} />,
+                title: "DevOps & Tools",
+                skills: ["CI/CD Pipeline", "Git", "Docker", "AWS CodePipeline", "GitHub Actions"]
+              },
+              {
+                icon: <Globe size={32} />,
+                title: "Web Technologies",
+                skills: ["React.js", "Node.js", "Express", "Flask", "Django", "Socket.io"]
+              },
+              {
+                icon: <Cpu size={32} />,
+                title: "Specialized Tools",
+                skills: ["Scapy", "NLTK", "spaCy", "OpenAI API", "BMv2 Switches", "PyQt/Tkinter"]
+              }
+            ].map((category, index) => (
+              <div key={index} className="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-colors">
+                <div className="text-blue-400 mb-4">{category.icon}</div>
+                <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skillList.map((skill, idx) => (
-                    <span key={idx} className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 text-white px-3 py-1 rounded-full text-sm border border-blue-500/30">
+                  {category.skills.map((skill, skillIndex) => (
+                    <span 
+                      key={skillIndex}
+                      className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm"
+                    >
                       {skill}
                     </span>
                   ))}
@@ -329,105 +196,213 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="py-20 px-6 bg-black/20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
-            Education
-          </h2>
-          
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-slate-800/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">Professional Experience</h2>
           <div className="space-y-8">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start">
-                <div>
-                  <h3 className="text-2xl font-bold text-blue-400 mb-2">MS By Research: Computer Science & Engineering</h3>
-                  <p className="text-xl text-gray-300 mb-1">Indian Institute of Technology Madras</p>
-                  <p className="text-gray-400">Chennai, India • 2025</p>
+            {[
+              {
+                role: "Research Scholar",
+                company: "Indian Institute of Technology Madras",
+                period: "Jan 2023 - Current",
+                location: "Chennai, India",
+                achievements: [
+                  "Specialized in programmable data planes with focus on Tofino switch and XDP technologies",
+                  "Published paper in IEEE NetSoft 2025 and developed patented anomaly detection algorithm",
+                  "Achieved 99% accuracy in predicting anomalies with ML models for flow-level and packet-level detection",
+                  "Reduced false positive rate by ~20% and achieved latency of few hundred nanoseconds on Tofino switch"
+                ]
+              },
+              {
+                role: "Infrastructure Consultant",
+                company: "Thoughtworks",
+                period: "Jun 2022 - Dec 2022",
+                location: "Bangalore, India",
+                achievements: [
+                  "Designed secure, scalable cloud infrastructure on Google Cloud Platform (GCP)",
+                  "Deployed Landing Zone Accelerators for streamlined enterprise cloud adoption",
+                  "Implemented CI/CD pipelines and automated workflows using Terraform and Cloud Deployment Manager",
+                  "Managed code repositories with GitHub and GitLab including actions and runners"
+                ]
+              },
+              {
+                role: "Big Data Engineer Intern",
+                company: "Cognizant Technology Solutions",
+                period: "Mar 2022 - May 2022",
+                location: "Chennai, India",
+                achievements: [
+                  "Conducted Twitter analysis using PySpark for sentiment analysis and behavioral insights",
+                  "Built movie recommendation system using Matrix factorization method",
+                  "Integrated ML feature pipelines for recommendation systems enabling near real-time personalization"
+                ]
+              }
+            ].map((exp, index) => (
+              <div key={index} className="bg-slate-700/30 p-6 rounded-lg">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-blue-400">{exp.role}</h3>
+                    <h4 className="text-lg text-gray-300">{exp.company}</h4>
+                    <p className="text-gray-400">{exp.location}</p>
+                  </div>
+                  <span className="text-gray-400 text-sm mt-2 md:mt-0">{exp.period}</span>
                 </div>
-                <div className="mt-2 md:mt-0">
-                  <span className="bg-green-600/30 text-green-300 px-4 py-2 rounded-full text-sm font-medium">
-                    CGPA: 8.5
-                  </span>
-                </div>
+                <ul className="space-y-2">
+                  {exp.achievements.map((achievement, achIndex) => (
+                    <li key={achIndex} className="text-gray-300 flex items-start">
+                      <span className="text-blue-400 mr-2 mt-1">•</span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start">
-                <div>
-                  <h3 className="text-2xl font-bold text-purple-400 mb-2">B.Tech Information Technology</h3>
-                  <p className="text-xl text-gray-300 mb-1">SASTRA Deemed To Be University</p>
-                  <p className="text-gray-400">Thanjavur • 2022</p>
-                </div>
-                <div className="mt-2 md:mt-0">
-                  <span className="bg-green-600/30 text-green-300 px-4 py-2 rounded-full text-sm font-medium">
-                    CGPA: 8.6 | First Class with Distinction
-                  </span>
+      {/* Projects Section */}
+      <section id="projects" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "AI Tutor Chatbot",
+                tech: "Python, NLP, React.js, OpenAI API",
+                description: "Intelligent chatbot for reading chapters, explaining content, and generating practice questions."
+              },
+              {
+                title: "No-Code CI/CD Pipeline Builder",
+                tech: "AWS CodePipeline, React.js, Node.js",
+                description: "Drag-and-drop builder for CI/CD pipelines in AWS, automating deployments without code."
+              },
+              {
+                title: "WebRTC Peer Communication App",
+                tech: "JavaScript, WebRTC, Node.js, Socket.io",
+                description: "Real-time communication tool analyzed to be faster than FTP for peer-to-peer transfers."
+              },
+              {
+                title: "Drag & Drop Website Generator",
+                tech: "React.js, Node.js, MongoDB",
+                description: "Web app to build websites by dragging and dropping elements with functionality support."
+              },
+              {
+                title: "NLP Weather Predictor",
+                tech: "Python, Tkinter, scikit-learn",
+                description: "GUI application predicting weather using Markov model based on historical data."
+              },
+              {
+                title: "Find It - Multiplayer Game",
+                tech: "React.js, Node.js, Socket.io, Python AI",
+                description: "Online multiplayer Spot It game with AI robot player implementation."
+              }
+            ].map((project, index) => (
+              <div key={index} className="bg-slate-800/50 p-6 rounded-lg hover:bg-slate-700/50 transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold mb-3 text-blue-400">{project.title}</h3>
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-1">
+                  {project.tech.split(', ').map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="bg-slate-600/50 text-gray-300 px-2 py-1 rounded text-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            Let's Connect
-          </h2>
-          <p className="text-xl text-gray-300 mb-12">
-            Always interested in discussing new opportunities, research collaborations, or innovative projects.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <a
-              href="mailto:saithivyah@gmail.com"
-              className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 flex items-center justify-center space-x-4"
-            >
-              <Mail className="text-blue-400" size={32} />
-              <div className="text-left">
-                <p className="text-gray-400 text-sm">Email</p>
-                <p className="text-white font-medium">saithivyah@gmail.com</p>
+      <section id="contact" className="py-20 bg-slate-800/50">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-blue-400">Let's Connect</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed">
+                I'm always open to discussing research opportunities, collaboration on innovative projects, 
+                or potential consulting engagements in networking technologies and cloud infrastructure.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Mail className="text-blue-400" size={20} />
+                  <a href="mailto:saithivyah@gmail.com" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    saithivyah@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="text-blue-400" size={20} />
+                  <span className="text-gray-300">+91-9385516450</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Linkedin className="text-blue-400" size={20} />
+                  <a 
+                    href="https://linkedin.com/in/saithivyah-15b30b150/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-blue-400 transition-colors"
+                  >
+                    LinkedIn Profile
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Github className="text-blue-400" size={20} />
+                  <a 
+                    href="https://github.com/saithivyah" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-blue-400 transition-colors"
+                  >
+                    GitHub Profile
+                  </a>
+                </div>
               </div>
-            </a>
-            
-            <a
-              href="tel:+91-9385516450"
-              className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 flex items-center justify-center space-x-4"
-            >
-              <Phone className="text-green-400" size={32} />
-              <div className="text-left">
-                <p className="text-gray-400 text-sm">Phone</p>
-                <p className="text-white font-medium">+91-9385516450</p>
+            </div>
+            <div className="bg-slate-700/30 p-6 rounded-lg">
+              <div className="space-y-4">
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    className="w-full p-3 bg-slate-600/50 border border-slate-500 rounded text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="email" 
+                    placeholder="Your Email" 
+                    className="w-full p-3 bg-slate-600/50 border border-slate-500 rounded text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <textarea 
+                    placeholder="Your Message" 
+                    rows="5"
+                    className="w-full p-3 bg-slate-600/50 border border-slate-500 rounded text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none resize-none"
+                  ></textarea>
+                </div>
+                <button 
+                  onClick={() => alert('Thank you for your interest! Please reach out via email: saithivyah@gmail.com')}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded font-semibold transition-colors"
+                >
+                  Send Message
+                </button>
               </div>
-            </a>
-          </div>
-
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://linkedin.com/in/saithivyah-15b30b150/"
-              className="bg-blue-600 hover:bg-blue-700 p-4 rounded-full transition-colors duration-300 flex items-center space-x-2"
-            >
-              <Linkedin size={24} />
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href="https://github.com/saithivyah"
-              className="bg-gray-700 hover:bg-gray-600 p-4 rounded-full transition-colors duration-300 flex items-center space-x-2"
-            >
-              <Github size={24} />
-              <span>GitHub</span>
-            </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-700 bg-black/20">
-        <div className="max-w-6xl mx-auto text-center">
+      <footer className="py-8 text-center border-t border-slate-700">
+        <div className="max-w-6xl mx-auto px-6">
           <p className="text-gray-400">
-            © 2025 Saithivyah R. Crafted with passion for technology and innovation.
+            © 2025 Saithivyah R. All rights reserved. | Research Scholar & Infrastructure Consultant
           </p>
         </div>
       </footer>
