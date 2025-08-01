@@ -1,7 +1,7 @@
 {
   "name": "sai-portfolio",
   "version": "0.1.0",
-  "homepage": "https://YOUR_USERNAME.github.io/sai-portfolio",
+  "homepage": "https://sai-official.github.io/sai-portfolio/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
