@@ -336,10 +336,6 @@ const Portfolio = () => {
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="text-blue-400" size={20} />
-                  <span className="text-gray-300">+91-9385516450</span>
-                </div>
-                <div className="flex items-center space-x-3">
                   <Linkedin className="text-blue-400" size={20} />
                   <a 
                     href="https://linkedin.com/in/saithivyah-15b30b150/" 
