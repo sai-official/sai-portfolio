@@ -368,6 +368,7 @@ const Portfolio = () => {
                     className="w-full p-3 bg-slate-600/50 border border-slate-500 rounded text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none"
                   />
                 </div>
+
                 <div>
                   <input 
                     type="email" 
