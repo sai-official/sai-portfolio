@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/sai-portfolio/static/js/main.ba249137.js",
+    "main.js": "/sai-portfolio/static/js/main.24f733a8.js",
     "index.html": "/sai-portfolio/index.html",
-    "main.ba249137.js.map": "/sai-portfolio/static/js/main.ba249137.js.map"
+    "main.24f733a8.js.map": "/sai-portfolio/static/js/main.24f733a8.js.map"
   },
   "entrypoints": [
-    "static/js/main.ba249137.js"
+    "static/js/main.24f733a8.js"
   ]
 }
